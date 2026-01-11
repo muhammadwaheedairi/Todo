@@ -74,7 +74,7 @@ const Header: React.FC<HeaderProps> = ({ activeTab = 'Dashboard', onMenuClick })
               <Layers size={18} className="text-white" />
             </div>
             <h1 className="text-xl md:text-2xl font-black text-gray-900 uppercase tracking-tighter">
-              Task<span className="text-[#F45B5B]">Flow</span>
+              Nexulo<span className="text-[#F45B5B]">Tasks</span>
             </h1>
           </div>
           <div className="h-6 w-px bg-gray-200 hidden md:block"></div>

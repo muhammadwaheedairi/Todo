@@ -44,7 +44,7 @@ const HomePage: React.FC<HomePageProps> = ({ onGetStarted, onLogin }) => {
                 <Layers size={22} className="text-white" />
               </div>
               <span className="text-2xl font-black text-gray-900 tracking-tighter uppercase">
-                Task<span className="text-[#F45B5B]">Flow</span>
+                Nexulo<span className="text-[#F45B5B]">Tasks</span>
               </span>
             </div>
             
@@ -140,7 +140,7 @@ const HomePage: React.FC<HomePageProps> = ({ onGetStarted, onLogin }) => {
                 <FeatureItem 
                   icon={<Globe className="text-[#27AE60]" />}
                   title="Global Access"
-                  description="Optimized for speed across all continents. TaskFlow works offline and syncs when you're back."
+                  description="Optimized for speed across all continents. NexuloTasks works offline and syncs when you're back."
                 />
                 <FeatureItem 
                   icon={<Cpu className="text-[#F45B5B]" />}
@@ -183,13 +183,13 @@ const HomePage: React.FC<HomePageProps> = ({ onGetStarted, onLogin }) => {
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex flex-col md:flex-row gap-8">
             <TestimonialCard 
-              quote="TaskFlow didn't just organize my day, it organized my life. The UI is a masterclass in modern design."
+              quote="NexuloTasks didn't just organize my day, it organized my life. The UI is a masterclass in modern design."
               author="Sarah Jenkins"
               role="Lead Designer at Apple"
               image="https://picsum.photos/seed/sarah/100/100"
             />
             <TestimonialCard 
-              quote="We replaced three different tools with TaskFlow. Our team's velocity increased by 40% in the first month."
+              quote="We replaced three different tools with NexuloTasks. Our team's velocity increased by 40% in the first month."
               author="Marcus Chen"
               role="CTO at TechFlow"
               image="https://picsum.photos/seed/marcus/100/100"
@@ -226,7 +226,7 @@ const HomePage: React.FC<HomePageProps> = ({ onGetStarted, onLogin }) => {
                   <Layers size={22} className="text-white" />
                 </div>
                 <span className="text-2xl font-black text-gray-900 tracking-tighter uppercase">
-                  Task<span className="text-[#F45B5B]">Flow</span>
+                  Nexulo<span className="text-[#F45B5B]">Tasks</span>
                 </span>
               </div>
               <p className="text-gray-500 font-medium leading-relaxed max-w-xs mb-10">
@@ -255,7 +255,7 @@ const HomePage: React.FC<HomePageProps> = ({ onGetStarted, onLogin }) => {
               <ul className="space-y-5">
                 <FooterLink>Documentation</FooterLink>
                 <FooterLink>Help Center</FooterLink>
-                <FooterLink>TaskFlow Academy</FooterLink>
+                <FooterLink>Academy</FooterLink>
                 <FooterLink>API Reference</FooterLink>
               </ul>
             </div>
@@ -283,7 +283,7 @@ const HomePage: React.FC<HomePageProps> = ({ onGetStarted, onLogin }) => {
 
           <div className="pt-10 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="flex items-center gap-8 text-gray-400 text-xs font-bold uppercase tracking-widest">
-              <span>© 2024 TASKFLOW INC.</span>
+              <span>© 2024 NEXULO TASKS INC.</span>
               <span className="hidden sm:inline">•</span>
               <span className="flex items-center gap-1.5">
                 <Globe size={14} /> English (US)

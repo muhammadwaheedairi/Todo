@@ -39,7 +39,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, onLogout }) 
           <Layers size={22} className="text-white" />
         </div>
         <h1 className="text-2xl font-black uppercase tracking-tighter">
-          Task<span className="text-white/60">Flow</span>
+          Nexulo<span className="text-white/60">Tasks</span>
         </h1>
       </div>
 
