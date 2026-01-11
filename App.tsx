@@ -7,19 +7,25 @@ import MyTaskView from './components/MyTaskView';
 import SettingsView from './Settings/SettingsView';
 import SignIn from './components/Auth/SignIn';
 import SignUp from './components/Auth/SignUp';
+import HomePage from './components/HomePage';
 import { Menu, X } from 'lucide-react';
 
-type View = 'signin' | 'signup' | 'app';
+type View = 'landing' | 'signin' | 'signup' | 'app';
 
 const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState('Dashboard');
-  const [view, setView] = useState<View>('signin');
+  const [view, setView] = useState<View>('landing');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const handleLogin = () => setView('app');
-  const handleLogout = () => setView('signin');
+  const handleLogout = () => setView('landing');
   const goToSignUp = () => setView('signup');
   const goToSignIn = () => setView('signin');
+  const goToLanding = () => setView('landing');
+
+  if (view === 'landing') {
+    return <HomePage onGetStarted={goToSignUp} onLogin={goToSignIn} />;
+  }
 
   if (view === 'signin') {
     return <SignIn onLogin={handleLogin} onGoToSignUp={goToSignUp} />;
