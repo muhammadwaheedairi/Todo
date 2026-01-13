@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { Plus } from 'lucide-react';
 import TaskList from './TaskList';
 import StatusCharts from './StatusCharts';
-import CompletedTasks from './CompletedTasks';
 import AddTaskModal from './AddTaskModal';
 import { Task } from '../types';
 import TaskDetail from './TaskDetail';
@@ -36,7 +35,7 @@ const Dashboard: React.FC = () => {
               <div className="w-6 h-6 border-2 border-[#F45B5B] rounded-sm flex items-center justify-center">
                 <div className="w-3 h-0.5 bg-[#F45B5B]" />
               </div>
-              <h3 className="text-lg md:text-xl font-bold text-gray-800">To-Do</h3>
+              <h3 className="text-lg md:text-xl font-bold text-gray-800">My Tasks</h3>
             </div>
             <button 
               onClick={() => setIsModalOpen(true)}
@@ -54,23 +53,11 @@ const Dashboard: React.FC = () => {
           <TaskList onSelectTask={setSelectedTask} />
         </div>
 
-        {/* Right Column: Status & Completed */}
-        <div className="col-span-1 md:col-span-5 lg:col-span-4 space-y-6 md:space-y-8">
-          {/* Status Section */}
-          <div className="bg-white rounded-[24px] md:rounded-[32px] p-5 md:p-8 shadow-sm border border-gray-100">
-            <h3 className="text-lg md:text-xl font-bold text-gray-800 mb-6 md:mb-8">Task Status</h3>
+        {/* Right Column: Status */}
+        <div className="col-span-1 md:col-span-5 lg:col-span-4">
+          <div className="bg-white rounded-[24px] md:rounded-[32px] p-5 md:p-8 shadow-sm border border-gray-100 sticky top-4">
+            <h3 className="text-lg md:text-xl font-bold text-gray-800 mb-6 md:mb-8">Status Overview</h3>
             <StatusCharts />
-          </div>
-
-          {/* Completed Section */}
-          <div className="bg-white rounded-[24px] md:rounded-[32px] p-5 md:p-8 shadow-sm border border-gray-100">
-             <div className="flex items-center gap-3 mb-6 md:mb-8">
-              <div className="w-6 h-6 bg-[#27AE60]/10 border-2 border-[#27AE60] rounded-sm flex items-center justify-center">
-                <CheckMarkIcon />
-              </div>
-              <h3 className="text-lg md:text-xl font-bold text-gray-800">Completed</h3>
-            </div>
-            <CompletedTasks />
           </div>
         </div>
       </div>
@@ -85,11 +72,5 @@ const Dashboard: React.FC = () => {
     </div>
   );
 };
-
-const CheckMarkIcon = () => (
-  <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M1 5L4.5 8.5L11 1.5" stroke="#27AE60" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
 
 export default Dashboard;

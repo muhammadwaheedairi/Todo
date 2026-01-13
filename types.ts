@@ -5,20 +5,12 @@ export enum TaskStatus {
   COMPLETED = 'Completed'
 }
 
-export enum TaskPriority {
-  EXTREME = 'Extreme',
-  MODERATE = 'Moderate',
-  LOW = 'Low'
-}
-
 export interface Task {
   id: string;
   title: string;
   description: string;
   status: TaskStatus;
-  priority: TaskPriority;
   createdAt: string;
-  image?: string;
 }
 
 export interface StatusMetric {

@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Task, TaskStatus, TaskPriority } from '../types';
+import { Task, TaskStatus } from '../types';
 import TaskDetail from './TaskDetail';
 import { MoreHorizontal } from 'lucide-react';
 
@@ -11,18 +11,14 @@ const MyTaskView: React.FC = () => {
       title: "Submit Documents",
       description: "Make sure to submit all the necessary documents. Review the list of documents required for submission and ensure all necessary documents are ready...",
       status: TaskStatus.NOT_STARTED,
-      priority: TaskPriority.EXTREME,
-      createdAt: '20/06/2023',
-      image: 'https://picsum.photos/seed/docs/300/200'
+      createdAt: '20/06/2023'
     },
     {
       id: 'm2',
       title: "Complete assignments",
       description: "The assignments must be completed to pass final year exams. Focus on Mathematics and Science projects first...",
       status: TaskStatus.IN_PROGRESS,
-      priority: TaskPriority.MODERATE,
-      createdAt: '20/06/2023',
-      image: 'https://picsum.photos/seed/study/300/200'
+      createdAt: '20/06/2023'
     }
   ];
 
@@ -65,12 +61,6 @@ const MyTaskView: React.FC = () => {
                     
                     <div className="flex items-center gap-4">
                       <div className="flex items-center gap-1">
-                        <span className="text-[10px] text-gray-400 font-medium">Priority:</span>
-                        <span className={`text-[10px] font-bold ${task.priority === TaskPriority.EXTREME ? 'text-[#F45B5B]' : 'text-[#3BAFDA]'}`}>
-                          {task.priority}
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-1">
                         <span className="text-[10px] text-gray-400 font-medium">Status:</span>
                         <span className={`text-[10px] font-bold ${
                           task.status === TaskStatus.NOT_STARTED ? 'text-[#F45B5B]' : 'text-[#3BAFDA]'
@@ -82,13 +72,6 @@ const MyTaskView: React.FC = () => {
                         <span className="text-[10px] text-gray-500 font-medium">{task.createdAt}</span>
                     </div>
                   </div>
-                  {task.image && (
-                    <img 
-                      src={task.image} 
-                      alt="" 
-                      className="w-20 h-16 rounded-xl object-cover shrink-0"
-                    />
-                  )}
                 </div>
                 <div className="absolute top-4 right-4 text-gray-300">
                   <MoreHorizontal size={16} />

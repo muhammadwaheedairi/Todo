@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Task, TaskStatus, TaskPriority } from '../types';
+import { Task, TaskStatus } from '../types';
 import TaskDetail from './TaskDetail';
 import { MoreHorizontal } from 'lucide-react';
 
@@ -11,18 +11,14 @@ const VitalTaskView: React.FC = () => {
       title: "Walk the dog",
       description: "Take the dog to the park and bring treats as well. Take Luffy and Jiro for a leisurely stroll...",
       status: TaskStatus.NOT_STARTED,
-      priority: TaskPriority.EXTREME,
-      createdAt: '20/06/2023',
-      image: 'https://picsum.photos/seed/dog/300/200'
+      createdAt: '20/06/2023'
     },
     {
       id: 'v2',
       title: "Take grandma to hospital",
       description: "Go back home and take grandma to the hospital for her regular checkup and medications...",
       status: TaskStatus.IN_PROGRESS,
-      priority: TaskPriority.MODERATE,
-      createdAt: '20/06/2023',
-      image: 'https://picsum.photos/seed/hospital/300/200'
+      createdAt: '20/06/2023'
     }
   ];
 
@@ -35,7 +31,7 @@ const VitalTaskView: React.FC = () => {
         <div className="col-span-12 lg:col-span-5 xl:col-span-4 bg-white rounded-[32px] p-8 shadow-sm border border-gray-100 flex flex-col h-full overflow-hidden">
           <div className="mb-8">
             <h3 className="text-xl font-bold text-gray-800 relative inline-block">
-              Vital Tasks
+              Tasks
               <span className="absolute -bottom-2 left-0 w-1/2 h-1 bg-[#F45B5B] rounded-full"></span>
             </h3>
           </div>
@@ -65,12 +61,6 @@ const VitalTaskView: React.FC = () => {
                     
                     <div className="flex items-center gap-4">
                       <div className="flex items-center gap-1">
-                        <span className="text-[10px] text-gray-400 font-medium">Priority:</span>
-                        <span className={`text-[10px] font-bold ${task.priority === TaskPriority.EXTREME ? 'text-[#F45B5B]' : 'text-[#3BAFDA]'}`}>
-                          {task.priority}
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-1">
                         <span className="text-[10px] text-gray-400 font-medium">Status:</span>
                         <span className={`text-[10px] font-bold ${
                           task.status === TaskStatus.NOT_STARTED ? 'text-[#F45B5B]' : 'text-[#3BAFDA]'
@@ -82,13 +72,6 @@ const VitalTaskView: React.FC = () => {
                         <span className="text-[10px] text-gray-500 font-medium">{task.createdAt}</span>
                     </div>
                   </div>
-                  {task.image && (
-                    <img 
-                      src={task.image} 
-                      alt="" 
-                      className="w-20 h-16 rounded-xl object-cover shrink-0"
-                    />
-                  )}
                 </div>
                 <div className="absolute top-4 right-4 text-gray-300">
                   <MoreHorizontal size={16} />

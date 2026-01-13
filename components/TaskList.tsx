@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { MoreHorizontal } from 'lucide-react';
-import { Task, TaskStatus, TaskPriority } from '../types';
+import { Task, TaskStatus } from '../types';
 
 interface TaskListProps {
   onSelectTask: (task: Task) => void;
@@ -14,27 +14,21 @@ const TaskList: React.FC<TaskListProps> = ({ onSelectTask }) => {
       title: "Attend Nischal's Birthday Party",
       description: "Buy gifts on the way and pick up cake from the bakery. (6 PM | Fresh Elements)...",
       status: TaskStatus.NOT_STARTED,
-      priority: TaskPriority.MODERATE,
-      createdAt: '20/06/2023',
-      image: 'https://picsum.photos/seed/bday/300/200'
+      createdAt: '20/06/2023'
     },
     {
       id: '2',
       title: "Landing Page Design for TravelDays",
       description: "Get the work done by EOD and discuss with client before leaving. (4 PM | Meeting Room)",
       status: TaskStatus.IN_PROGRESS,
-      priority: TaskPriority.MODERATE,
-      createdAt: '20/06/2023',
-      image: 'https://picsum.photos/seed/design/300/200'
+      createdAt: '20/06/2023'
     },
     {
       id: '3',
       title: "Presentation on Final Product",
       description: "Make sure everything is functioning and all the necessities are properly met. Prepare the team and get the documents ready for...",
       status: TaskStatus.NOT_STARTED,
-      priority: TaskPriority.MODERATE,
-      createdAt: '10/06/2023',
-      image: 'https://picsum.photos/seed/meeting/300/200'
+      createdAt: '10/06/2023'
     }
   ];
 
@@ -50,7 +44,8 @@ const TaskList: React.FC<TaskListProps> = ({ onSelectTask }) => {
             <div className="flex-1">
               <div className="flex items-center gap-3 mb-3">
                 <div className={`w-3.5 h-3.5 rounded-full border-2 shrink-0 ${
-                  task.status === TaskStatus.IN_PROGRESS ? 'border-blue-500' : 'border-[#F45B5B]'
+                  task.status === TaskStatus.IN_PROGRESS ? 'border-blue-500' : 
+                  task.status === TaskStatus.COMPLETED ? 'border-green-500' : 'border-[#F45B5B]'
                 }`} />
                 <h4 className="font-bold text-gray-800 text-base md:text-lg leading-snug">{task.title}</h4>
               </div>
@@ -60,13 +55,10 @@ const TaskList: React.FC<TaskListProps> = ({ onSelectTask }) => {
               
               <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mt-auto">
                 <div className="flex items-center gap-1.5">
-                  <span className="text-[10px] md:text-xs text-gray-400 font-medium">Priority:</span>
-                  <span className="text-[10px] md:text-xs text-[#3BAFDA] font-bold">{task.priority}</span>
-                </div>
-                <div className="flex items-center gap-1.5">
                   <span className="text-[10px] md:text-xs text-gray-400 font-medium">Status:</span>
                   <span className={`text-[10px] md:text-xs font-bold ${
-                    task.status === TaskStatus.NOT_STARTED ? 'text-[#F45B5B]' : 'text-blue-500'
+                    task.status === TaskStatus.NOT_STARTED ? 'text-[#F45B5B]' : 
+                    task.status === TaskStatus.COMPLETED ? 'text-green-500' : 'text-blue-500'
                   }`}>{task.status}</span>
                 </div>
                 <div className="flex items-center gap-1.5">
@@ -75,14 +67,6 @@ const TaskList: React.FC<TaskListProps> = ({ onSelectTask }) => {
                 </div>
               </div>
             </div>
-
-            {task.image && (
-              <img 
-                src={task.image} 
-                alt="task context" 
-                className="w-full sm:w-28 md:w-32 h-32 sm:h-24 rounded-xl md:rounded-2xl object-cover shrink-0"
-              />
-            )}
 
             <button 
               onClick={(e) => e.stopPropagation()}
